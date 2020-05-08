@@ -1,0 +1,135 @@
+---
+mandatory: True
+code: |
+  menu_items = [ action_menu_item('Review Answers', 'review_answers') ]
+---
+include: 
+  - HSC_disabilitymain.yml
+---
+event: review_answers
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for **Part 1 - Understanding and Communicating**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered correctly, please click on 'Review' to modify answers.** 
+
+  Questions     | Scores 
+  --------------|----------
+  Concentrating on doing something for ten minutes | ${ D1_1 }
+  Remembering to do important things | ${ D1_2 }
+  Analysing and finding solutions to problems in day-to-day life | ${ D1_3 } 
+  Learning a new task | ${ D1_4 }
+  Generally understanding what people say | ${ D1_5 }
+  Starting and maintaining a conversation | ${ D1_6 }
+
+review: 
+  - Review: D1_1
+continue button field: score_part1
+---
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for **Part 2 - Getting Around**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered correctly, please click on 'Review' to modify answers.** 
+  
+  Questions     | Scores 
+  --------------|----------
+  Standing for long periods, such as 30 minutes | ${ D2_1 }
+  Standing up from sitting down | ${ D2_2 }
+  Moving around inside your home | ${ D2_3 }
+  Getting out of your home | ${ D2_4 }
+  Walking a long distance, such as a kilometre (or equivalent) | ${ D2_5 }
+
+review: 
+  - Review: D2_1
+continue button field: score_part2
+---
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for **Part 3 - Self-Care**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered correctly, please click on 'Review' to modify answers.** 
+  
+  Questions     | Scores 
+  --------------|----------
+  Washing your whole body | ${ D3_1 }
+  Getting dressed | ${ D3_2 }
+  Eating | ${ D3_3 }
+  Staying by yourself for a few days | ${ D3_4 }
+
+review: 
+  - Review: D3_1
+continue button field: score_part3
+---
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for **Part 4 - Getting Along with People**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered correctly, please click on 'Review' to modify answers.** 
+  
+  Questions     | Scores 
+  --------------|----------
+  Dealing with people you don't know | ${ D4_1 }
+  Maintaining a friendship | ${ D4_2 }
+  Getting along with people who are close to you | ${ D4_3 }
+  Making new friends | ${ D4_4 }
+  Sexual Activities | ${ D4_5 }
+
+review: 
+  - Review: D4_1
+continue button field: score_part4
+---
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for **Part 5 - Life Activities**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered correctly, please click on 'Review' to modify answers.** 
+  
+  Questions                                                 | Scores 
+  ----------------------------------------------------------|----------
+  Taking care of your household responsibilities            | ${ D5_1 }
+  Doing your most important household tasks well            | ${ D5_2 }
+  Getting all the household work done that you needed to do | ${ D5_3 }
+  Getting your household work done as quickly as needed     | ${ D5_4 }
+  Day-to-day work/school                                    | ${ D5_5 }
+  Doing your most important work/school tasks well          | ${ D5_6 }
+  Getting all the work done that you need to do             | ${ D5_7 }
+  Getting your work done as quickly as needed               | ${ D5_8 }
+
+review: 
+  - Review: D5_1 
+continue button field: score_part5
+---
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for **Part 6 - Participation in Society**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered correctly, please click on 'Review' to modify answers.** 
+  
+  Questions     | Scores 
+  --------------|----------
+  Joining in community activities the same way as anyone else can    | ${ D6_1 }
+  How much of a problem did you have because of barriers or hindrances in the world around you | ${ D6_2 }
+  living with dignity because of the attitudes and actions of others | ${ D6_3 }
+  How much time did you spend on your health condition or its consequences | ${ D6_4 }
+  How much have you been emotionally affected by your health condition | ${ D6_5 }
+  How much has your health been a drain on the financial resources of you or your family | ${ D6_6 }
+  How much of a problem did your family have because of your health problems | ${ D6_7 }
+  How much of a problem did you have in doing things by yourself for relaxation or pleasure | ${ D6_8 }
+
+review: 
+  - Review: D6_1
+continue button field: score_part6
+---

@@ -1,0 +1,68 @@
+---
+variable name: Mobilityquestions
+use objects: True
+data: 
+  - mobilityquestion: Standing for long periods such as 30 minutes?
+    mobilitychoices: 
+      - 0 
+      - 1
+      - 2
+      - 3
+      - 4
+  - mobilityquestion: Standing up from sitting down?
+    mobilitychoices: 
+      - 0 
+      - 1
+      - 2
+      - 3
+      - 4
+  - mobilityquestion: Moving around inside your home? 
+    mobilitychoices: 
+      - 0 
+      - 1
+      - 2
+      - 3
+      - 4
+  - mobilityquestion: Getting out of your home? 
+    mobilitychoices: 
+      - 0 
+      - 1
+      - 2
+      - 3
+      - 4
+  - mobilityquestion: Walking for a long distance such as a kilometre (or equivalent)? 
+    mobilitychoices: 
+      - 0 
+      - 1
+      - 2
+      - 3
+      - 4
+--- 
+mandatory: True
+question: Introduction to checkboxes
+subquestion: |
+  #### Here is the result of your score on mobility. 
+  
+  ${ KWquestion_table }
+  
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+table: KWquestion_table
+rows:  Mobilityquestions
+columns:
+  - Question: |
+      row_item['mobilityquestion']
+  - Selected answers: |
+      row_item['mobilityanswers'].true_values()
+  - No. Selected answers: |
+      len(row_item['mobilityanswers'].true_values())
+---
+question: |
+  ${ Mobilityquestions[i]['mobilityquestion'] }
+fields:
+  - no label: Mobilityquestions[i]['mobilityanswers']
+    datatype: checkboxes
+    code: Mobilityquestions[i]['mobilitychoices']
+--- 

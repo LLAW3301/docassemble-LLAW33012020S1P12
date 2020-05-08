@@ -1,0 +1,63 @@
+---
+terms:
+      Australian citizen: |
+        Were you born in Australia, or have you received official citizenship?
+---
+question: Personal Information of Client  
+subquestion: |
+fields:
+  - Are you of Aboriginal or Torrens Strait Islander origin?: client_origin
+    datatype: radio
+    choices: 
+      - No
+      - Yes - Aboriginal
+      - Yes - Torrens Strait Islander 
+      - Yes - Aboriginal and Torrens Strait Islander 
+      - Do not wish to disclose  
+  - Country of Birth: client_birthcountry
+    code: |
+      countries_list()
+    default: Australia
+  - Are you living in Australia permanently?: client_permanent
+    datatype: radio
+    choices: 
+      - Yes 
+      - No
+  - Are you an {Australian citizen}?: client_citizen
+    datatype: radio
+    choices: 
+      - Yes 
+      - No
+  - If no, what type of visa do you have?: client_noncitizen
+    show if: 
+      variable: client_citizen
+      is: No
+    choices: 
+      - Permanent visa
+      - Protected special category visa
+      - Others
+  - Others (please specify): client_noncitizenother
+    show if: 
+      variable: client_noncitizen
+      is: Others
+  - Current home or residential address: client_address
+  - State: client_state
+    choices: 
+      - South Australia
+      - New South Wales
+      - Queensland
+      - Tasmania 
+      - Victoria 
+      - Western Australia
+    default: South Australia
+  - Postcode: client_postcode
+section: residency
+---
+code: |
+  if client_citizen and client_permanent:
+    client_residency = True
+  elif client_permanent and client_noncitizen:
+    client_residency = True
+  else:
+    client_residency = False
+---

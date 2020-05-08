@@ -1,0 +1,29 @@
+---
+include: 
+  - HSC_residency.yml
+---
+event: endpoint['ineligibleduetoresidency']
+question: Eligibility Requirements Not Met 
+subquestion: |
+  To access the NDIS, the client must live in Australia and:
+  
+    - Be an Australian citizen; or
+    - A permanent visa holder; or
+    - A special category visa holder.
+    
+  The information provided by the client are: 
+  
+  Question                                 | Client's Input 
+  -----------------------------------------|----------------
+  Are you living in Australia permanently? | ${ client_permanent }
+  Are you an Australian citizen?           | ${ client_citizen }
+  % if client_citizen == 'No':
+  If no, what type of visa do you have?    | ${ client_noncitizen } 
+  % endif 
+  
+  As the above criteria is not met, the client is **not eligible** for the NDIS. 
+  
+buttons: 
+  - exit: restart 
+  - restart: restart 
+---
