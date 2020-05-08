@@ -1,0 +1,15 @@
+---
+# This is the ineligible endpoint 
+event: endpoint['ineligibleduetoage']
+question: Eligibility Requirements Not Met 
+subquestion:  | 
+  To be eligible for the NDIS, the client needs to be between 7 and 65 years old. 
+  
+  The client is ${ client.age_in_years() } and is **over the age of 65**. 
+  
+  The client is **not eligible** for the NDIS. 
+
+buttons: 
+  - Exit: restart
+  - Restart: restart
+---

@@ -1,0 +1,13 @@
+---
+event: endpoint['ineligible']
+question: Eligibility Requirement Not Met 
+subquestion: |
+  Thank you for completing the HSC NDIS Eligibility Questionnaire. 
+  
+  As the client did not meet the eligibility requirements, the client may not be eligible for the NDIS. 
+  
+  There are some alternative ways that the client may be able to pursue to support . 
+
+buttons: 
+  - Exit: restart 
+---

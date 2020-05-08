@@ -1,0 +1,24 @@
+objects: 
+  - client: Individual
+---
+question: Personal Information of Client 
+subquestion: |
+fields: 
+  - First Name: client_firstname
+  - Last Name: client_lastname
+  - Date of Birth (DD/MM/YYYY): client.birthdate
+    datatype: date.format_date('d/MM/YYYY')
+  - Gender: client_gender
+    datatype: radio
+    choices: 
+      - Male 
+      - Female
+      - Do not wish to specify   
+section: personal
+---
+code: |
+  if client.age_in_years() <= 65:
+    client_age = True
+  else:
+    client_age = False
+---

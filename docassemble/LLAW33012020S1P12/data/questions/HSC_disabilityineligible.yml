@@ -1,0 +1,10 @@
+---
+event: endpoint['ineligibleduetonodisability']
+question: Eligibility Requirements Not Met 
+subquestion: |
+  To access the NDIS, the client meet the disability or early intervention access requirements. 
+  
+buttons: 
+  - exit: restart 
+  - restart: restart 
+---

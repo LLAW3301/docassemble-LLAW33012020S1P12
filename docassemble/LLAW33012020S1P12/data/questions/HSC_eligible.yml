@@ -1,0 +1,25 @@
+---
+include: 
+  - HSC_personalinfo.yml
+  - HSC_residency.yml
+  - HSC_disabilityinfo.yml
+  - HSC_disabilitymain.yml
+---
+event: endpoint['eligible']
+question: Eligibility Requirement Met 
+subquestion: |
+  Thank you for completing the HSC NDIS Eligibility Questionnaire. 
+  
+  The client's overall score for the Assessment is ${ (((D1_1 + D1_2 + D1_3 + D1_4 + D1_5 + D1_6)/24) + ((D2_1 + D2_2 + D2_3 + D2_4 + D2_5)/20) + ((D3_1 + D3_2 + D3_3 + D3_4)/16) + ((D4_1 + D4_2 + D4_3 + D4_4 + D4_5)/20) + ((D5_1 + D5_2 + D5_3 + D5_4 + D5_5 + D5_6 + D5_7 + D5_8)/32) + ((D6_1 + D6_2 + D6_3 + D6_4 + D6_5 + D6_6 + D6_7 + D6_8)/32)) /6 *100}%
+  
+  
+  It is likely that the client may be eligible for the NDIS.
+
+attachment: 
+  docx template file: NDIS_Form.docx
+  valid formats: 
+  - pdf 
+
+buttons: 
+  - Finish: restart 
+---

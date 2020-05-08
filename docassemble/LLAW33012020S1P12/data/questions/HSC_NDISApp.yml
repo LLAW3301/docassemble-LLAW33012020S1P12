@@ -1,0 +1,162 @@
+---
+sections:
+  - intro: Welcome
+  - personal: Personal Information 
+  - residency: Residency 
+  - disability: Disability Information 
+  - assessment: Assessment of Client’s Functional Capacity
+    subsections:
+    - part 1: Communication and Understanding 
+    - part 2: Getting Around
+    - part 3: Self-Care
+    - part 4: Getting Along with People
+    - part 5: Life Activities
+    - part 6: Participation in Society 
+---
+features:
+  navigation: True
+---
+include:
+  - HSC_personalinfo.yml
+  - HSC_residency.yml
+  - HSC_disabilityinfo.yml
+  - HSC_ageineligibility.yml
+  - HSC_disabilitymain.yml
+  - HSC_assessment_table.yml
+  - HSC_residenceineligibility.yml
+  - HSC_eligible.yml
+  - HSC_ineligible.yml
+---
+objects: 
+  - endpoint: DADict
+---
+objects: 
+  - client: Individual
+---
+metadata:
+  title: |
+    HSC - NDIS Navigator
+  short title: |
+    HSC NDIS
+  show login: True
+---
+objects:
+  - KWlogo: DAStaticFile.using(filename='hutt-st-centre-logo.svg')
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + KWlogo.url_for() + '" style="height: 50px;">')
+---
+features:
+  css: HSC.css
+  debug: True
+  hide standard menu: False
+---
+mandatory: True
+question: Hutt Street Centre NDIS Navigator 
+subquestion: |
+  Welcome to our NDIS Navigator!
+  
+  ##### **PLEASE READ THE FOLLOWING INFORMATION TO THE CLIENT:** 
+  
+  The purpose of this application is to decide whether you are likely to be 
+  eligible for the National Disability Insurance Scheme (NDIS). 
+  
+  The application will collect your ***personal information*** and ***health information.*** 
+  
+  ##### ***Disclaimer:***  
+  
+    This application and its outcomes **DO NOT** constitute legal advice. 
+    
+    This application does not guarantee you will receive funding from the NDIS. 
+    It will only assess whether you may be eligible for the NDIS. 
+   
+   **The NDIA will make the final decision.**
+    
+    Please answer all questions honestly.
+   
+    If you continue, you understand and accept these terms. 
+
+field: sees_nav_bar    
+buttons:
+  - "I accept and understand": continue
+  - "I do not accept": restart
+---
+mandatory: True
+code: |
+  if ( client_age == False ):
+    endpoint['ineligibleduetoage']
+  elif ( client_residency == False ):
+    endpoint['ineligibleduetoresidency']
+  elif ( potential_disability == False ):
+    endpoint['ineligibleduetonodisability']
+  else:
+    continue_disability_assessment
+    assessment_part1
+    assessment_part2
+    assessment_part3
+    assessment_part4
+    assessment_part5
+    assessment_part6
+    score_part1
+    score_part2
+    score_part3
+    score_part4
+    score_part5
+    score_part6
+    overall_score
+    next_page
+    
+    
+  if (overall_score >= 50):
+    endpoint['eligible']
+  else: 
+    endpoint['ineligible']
+---
+event: intro
+code: |
+  force_ask('sees_nav_bar')
+---
+event: personal
+code: | 
+  force_ask('client_firstname', 'client_lastname', 'client.birthdate', 'client_gender')
+---
+event: residency 
+code: |
+  force_ask('client_origin')
+---
+event: disability
+code: |
+  force_ask('potential_disability')
+---
+event: assessment 
+code: |
+  force_ask('continue_disability_assessment')
+---
+event: part 1
+code: |
+  force_ask('D1_1')
+---
+event: part 2
+code: |
+  force_ask('D2_1')
+---
+event: part 3
+code: |
+  force_ask('D3_1')
+---
+event: part 4
+code: |
+  force_ask('D4_1')
+---
+event: part 5
+code: |
+  force_ask('D5_1')
+---
+event: part 6
+code: |
+  force_ask('D6_1')
+---
+features:
+  navigation: True
+---

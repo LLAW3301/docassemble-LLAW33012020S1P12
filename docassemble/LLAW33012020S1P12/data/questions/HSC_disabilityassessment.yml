@@ -1,0 +1,394 @@
+---
+mandatory: True
+question: Part 1 - Understanding and Communicating  
+subquestion: |
+  *This section of the questionnaire will ask you about your understanding and communication skills.*
+  
+  **In the past 30 days, how much difficulty did you have in:**
+fields:
+  - Concentrating on doing something for ten minutes?: D1_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Remembering to do important things?: D1_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Analysing and finding solutions to problems in day-to-day life? : D1_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Learning a new task, for example, learning how to get to a new place?: D1_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Generally understanding what people say?: D1_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Starting and maintaining a conversation?: D1_6
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Part 2 - Getting Around 
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in getting around.*
+  
+  **In the past 30 days, how much difficulty did you have in:**
+fields:
+  - Standing for long periods, such as 30 minutes?: D2_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Standing up from sitting down?: D2_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Moving around inside your home?: D2_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting out of your home?: D2_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Walking a long distance, such as a kilometre (or equivalent)?: D2_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Part 3 - Self-Care  
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in taking care of yourself*
+  
+  **In the past 30 days, how much difficulty did you have in:**
+fields:
+  - Washing your whole body?: D3_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting dressed?: D3_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Eating?: D3_3 
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Staying by yourself for a few days?: D3_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Part 4 - Getting Along with People  
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in getting along with people.*
+  
+  Please remember that I am only asking only about difficulties that are due to your disability or injury. 
+  
+  **In the past 30 days, how much difficulty did you have in:**
+fields:
+  - Dealing with people you don't know?: D4_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Maintaining a friendship?: D4_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting along with people who are close to you?: D4_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Making new friends?: D4_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Sexual activities?: D4_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Part 5(1) - Life Activities (Household Activities)
+subquestion: |
+  *This section of the questionnaire will ask you about activities involved in maintaining your household, and in caring for the people who you live with or are close to. These activities include cooking, cleaning, shopping, caring for others and caring for your belongings.* 
+  
+  **In the past 30 days, how much difficulty did you have in:**
+fields:
+  - Taking care of your household responsibilities?: D5_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Doing your most important household tasks well?: D5_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting all the household work done that you needed to do?: D5_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting your household work done as quickly as needed?: D5_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Part 5(2) - Life Activities (Work or School Activities)
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties performing your work or school activities.* 
+  *If you work (paid, non-paid, self-employed) or go to school, complete questions D5.5–D5.8, below. Oth- erwise, skip to Part 6.*
+  
+  **In the past 30 days, how much difficulty did you have in:**
+fields:
+  - Your day-to-day work/school?: D5_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Doing your most important work/school tasks well?: D5_6
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting all the work done that you need to do?: D5_7
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting your work done as quickly as needed?: D5_8
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Part 6 - Participation in Society 
+subquestion: |
+  *This section of the questionnaire will ask you about your participation in society and the impact of your disability/injury on you and your family.* 
+  
+fields:
+  - How much of a problem did you have joining in community activities (for example, festivities, religious or other activities) in the same way as anyone else can?: D6_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did you have because of barriers or hindrances in the world around you?: D6_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did you have living with dignity because of the attitudes and actions of others?: D6_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much time did you spend on your health condition or its consequences?: D6_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much have you been emotionally affected by your health condition?: D6_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much has your health been a drain on the financial resources of you or your family?: D6_6
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did your family have because of your health problems?: D6_7
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did you have in doing things by yourself for relaxation or pleasure?: D6_8
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+---
+mandatory: True
+question: Table of Input Score 
+subquestion: |
+  The following table is the client's input score. 
+  Please confirm if each of the following questions are scored correctly. 
+
+  Domain   | Questions    | Scores 
+  ---------|--------------|----------
+  1        | 
+ 
+ 

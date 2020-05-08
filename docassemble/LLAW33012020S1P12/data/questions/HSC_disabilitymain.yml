@@ -1,0 +1,443 @@
+---
+variable name: KWactivity
+use objects: True
+data:
+  - increased effort 
+  - discomfort or pain
+  - slowness 
+  - changes in the way you do the activity 
+---
+variable name: KWscore 
+use objects: True
+data: 
+  - 0 = no difficulty doing the activity
+  - 1 = mild difficulty doing the activity 
+  - 2 = moderate difficulty doing the activity 
+  - 3 = severe difficulty doing the activity 
+  - 4 = extreme difficulty AND/OR cannot do the activity 
+---
+question: Assessment of Client’s Functional Capacity
+subquestion: |
+  ##### **PLEASE READ THE FOLLOWING INFORMATION TO THE CLIENT:** 
+   
+  The following questions to be asked is about the difficulties that you faced because of your disability or injury. 
+  
+  When I ask you about difficulties in doing an activity think about: 
+  
+  % for KWitem in KWactivity:
+  - ${ KWitem }
+  % endfor
+   
+  When answering, I’d like you to think back **over the past 30 days.** 
+  
+  I would also like you to answer these questions thinking about how much difficulty you have had, on average, over the past 30 days, while doing the activity as you usually do it.
+
+  #####**Use the number 0, 1, 2, 3 and 4 when responding.**
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+section: assessment
+continue button field: continue_disability_assessment
+---
+question: Part 1 - Understanding and Communicating  
+subquestion: |
+  *This section of the questionnaire will ask you about your understanding and communication skills.*
+  
+  Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 1
+fields:
+  - Concentrating on doing something for ten minutes?: D1_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Remembering to do important things?: D1_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Analysing and finding solutions to problems in day-to-day life? : D1_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Learning a new task, for example, learning how to get to a new place?: D1_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Generally understanding what people say?: D1_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Starting and maintaining a conversation?: D1_6
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+
+continue button field: assessment_part1
+---
+question: Part 2 - Getting Around 
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in getting around.*
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 2
+fields:
+  - Standing for long periods, such as 30 minutes?: D2_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Standing up from sitting down?: D2_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Moving around inside your home?: D2_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting out of your home?: D2_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Walking a long distance, such as a kilometre (or equivalent)?: D2_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+continue button field: assessment_part2
+---
+question: Part 3 - Self-Care  
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in taking care of yourself*
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 3
+fields:
+  - Washing your whole body?: D3_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting dressed?: D3_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Eating?: D3_3 
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Staying by yourself for a few days?: D3_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+continue button field: assessment_part3
+---
+question: Part 4 - Getting Along with People  
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in getting along with people.*
+  
+  Please remember that I am only asking only about difficulties that are due to your disability or injury. 
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 4
+fields:
+  - Dealing with people you don't know?: D4_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Maintaining a friendship?: D4_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting along with people who are close to you?: D4_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Making new friends?: D4_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Sexual activities?: D4_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+continue button field: assessment_part4
+---
+question: Part 5 - Life Activities
+subquestion: |
+  *This section of the questionnaire will ask you about activities involved in maintaining your household, and in caring for the people who you live with or are close to. These activities include cooking, cleaning, shopping, caring for others and caring for your belongings.* 
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 5
+fields:
+  - Taking care of your household responsibilities?: D5_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Doing your most important household tasks well?: D5_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting all the household work done that you needed to do?: D5_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting your household work done as quickly as needed?: D5_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Your day-to-day work/school?: D5_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Doing your most important work/school tasks well?: D5_6
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting all the work done that you need to do?: D5_7
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - Getting your work done as quickly as needed?: D5_8
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+continue button field: assessment_part5
+---
+question: Part 6 - Participation in Society 
+subquestion: |
+  *This section of the questionnaire will ask you about your participation in society and the impact of your disability/injury on you and your family.* 
+
+section: part 6
+fields:
+  - How much of a problem did you have joining in community activities (for example, festivities, religious or other activities) in the same way as anyone else can?: D6_1
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did you have because of barriers or hindrances in the world around you?: D6_2
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did you have living with dignity because of the attitudes and actions of others?: D6_3
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much time did you spend on your health condition or its consequences?: D6_4
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much have you been emotionally affected by your health condition?: D6_5
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much has your health been a drain on the financial resources of you or your family?: D6_6
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did your family have because of your health problems?: D6_7
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  - How much of a problem did you have in doing things by yourself for relaxation or pleasure?: D6_8
+    datatype: integer
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+continue button field: assessment_part6
+---
+question: Overall Score 
+subquestion: |
+   Total score = ${ overall_score }
+
+continue button field: next_page
+---
+code: |
+  part_1 = (D1_1 + D1_2 + D1_3 + D1_4 + D1_5 + D1_6) / 24
+  part_2 = (D2_1 + D2_2 + D2_3 + D2_4 + D2_5) / 20
+  part_3 = (D3_1 + D3_2 + D3_3 + D3_4) / 16
+  part_4 = (D4_1 + D4_2 + D4_3 + D4_4 + D4_5) / 20
+  part_5 = (D5_1 + D5_2 + D5_3 + D5_4 + D5_5 + D5_6 + D5_7 + D5_8) / 32
+  part_6 = (D6_1 + D6_2 + D6_3 + D6_4 + D6_5 + D6_6 + D6_7 + D6_8) / 32
+  overall_score = ((part_1 + part_2 + part_3 + part_4 + part_5 + part_6) / 6) * 100
+---

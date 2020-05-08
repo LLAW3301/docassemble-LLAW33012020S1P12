@@ -1,0 +1,33 @@
+---
+terms: 
+  primary disability: |
+     This is the disability that has the most impact on the client’s daily life
+---
+question: Client's Disability Information 
+subquestion: |
+fields: 
+  - Is the client seeking support from the NDIS in relation to their disability or injury?: potential_disability
+    datatype: yesnoradio
+  - Client's {Primary Disability}: primary_disability
+  - Please list any other disabilities (if any): other_disability 
+    required: False
+section: disability 
+---
+code: |
+  if potential_disability:
+    client_disability = True
+  elif primary_disability:
+    client_disability = True
+  elif primary_disability and other_disability:
+    client_disability = True
+  else:
+    client_disability = False
+---
+code: | 
+  options = [
+    {'No, does not need assitance': "No, does not need assitance"},
+    {'Yes, needs special equipment': "Yes, needs special equipment"},
+    {'Yes, needs assistive technology': "Yes, needs assistive technology"},
+    {'Yes, needs assistance from other persons': "Yes, needs assistance from other persons"}
+    ]
+---
