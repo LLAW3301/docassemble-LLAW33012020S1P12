@@ -1,0 +1,108 @@
+---
+mandatory: True
+code: |
+  menu_items = [ action_menu_item('Review Answers', 'review_answers') ]
+---
+include: 
+  - HSC_disabilitymain.yml
+---
+event: review_answers
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for:  
+  
+  - **Part 1 - Understanding and Communicating** 
+  - **Part 2 - Getting Around** 
+  - **Part 3 - Self-Care** 
+  - **Part 4 - Getting Along with People**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered incorrectly, please click on 'Edit' to modify answers.** 
+
+  Part  | Questions     | Scores    | Edit Answer 
+  ------|---------------|-----------|------------
+  **1** | Concentrating on doing something for ten minutes | ${ D1_1 } | [Edit](${ url_action('D1_1') })
+        | Remembering to do important things | ${ D1_2 } | [Edit](${ url_action('D1_2') })
+        | Analysing and finding solutions to problems in day-to-day life | ${ D1_3 } | [Edit](${ url_action('D1_3') })
+        | Learning a new task | ${ D1_4 } | [Edit](${ url_action('D1_4') })
+        | Generally understanding what people say | ${ D1_5 } | [Edit](${ url_action('D1_5') })
+        | Starting and maintaining a conversation | ${ D1_6 } | [Edit](${ url_action('D1_6') })
+  **2** | Standing for long periods, such as 30 minutes | ${ D2_1 } | [Edit](${ url_action('D2_1') })
+        | Standing up from sitting down | ${ D2_2 } | [Edit](${ url_action('D2_2') })
+        | Moving around inside your home | ${ D2_3 } | [Edit](${ url_action('D2_3') })
+        | Getting out of your home | ${ D2_4 } | [Edit](${ url_action('D2_4') })
+        | Walking a long distance, such as a kilometre (or equivalent) | ${ D2_5 } | [Edit](${ url_action('D2_5') })
+  **3** | Washing your whole body | ${ D3_1 } | [Edit](${ url_action('D3_1') })
+        | Getting dressed | ${ D3_2 } | [Edit](${ url_action('D3_2') })
+        | Eating | ${ D3_3 } | [Edit](${ url_action('D3_3') })
+        | Staying by yourself for a few days | ${ D3_4 } | [Edit](${ url_action('D3_4') })
+  **4**| Dealing with people you don't know | ${ D4_1 } | [Edit](${ url_action('D4_1') })
+       | Maintaining a friendship | ${ D4_2 } | [Edit](${ url_action('D4_2') })
+       | Getting along with people who are close to you | ${ D4_3 } | [Edit](${ url_action('D4_3') })
+       | Making new friends | ${ D4_4 } | [Edit](${ url_action('D4_4') })
+       | Sexual Activities | ${ D4_5 } | [Edit](${ url_action('D4_5') })        
+ 
+continue button field: score_part1
+---
+question: Table of Input Score
+subquestion: |
+  The following table is the client's input score for:
+  
+  - **Part 5 - Life Activities**
+  - **Part 6 - Participation in Society**
+  
+  Please confirm if each of the following questions are scored correctly. 
+  
+  **If entered incorrectly, please click on 'Edit' to modify answers.** 
+  
+  Part | Questions     | Scores  | Edit Answers 
+  -----|--------------|----------|-------------
+  **5**| Taking care of your household responsibilities | ${ D5_1 } | [Edit](${ url_action('D5_1') })
+       | Doing your most important household tasks well | ${ D5_2 } | [Edit](${ url_action('D5_2') })
+       | Getting all the household work done that you needed to do | ${ D5_3 } | [Edit](${ url_action('D5_3') })
+       | Getting your household work done as quickly as needed | ${ D5_4 } | [Edit](${ url_action('D5_4') })
+       | Day-to-day work/school | ${ D5_5 } | [Edit](${ url_action('D5_5') })
+       | Doing your most important work/school tasks well | ${ D5_6 } | [Edit](${ url_action('D5_6') })
+       | Getting all the work done that you need to do | ${ D5_7 } | [Edit](${ url_action('D5_7') })
+       | Getting your work done as quickly as needed | ${ D5_8 } | [Edit](${ url_action('D5_8') })
+  **6**|Joining in community activities the same way as anyone else can | ${ D6_1 } | [Edit](${ url_action('D6_1') })
+       | How much of a problem did you have because of barriers or hindrances in the world around you | ${ D6_2 } | [Edit](${ url_action('D6_1') })
+       | Living with dignity because of the attitudes and actions of others | ${ D6_3 } | [Edit](${ url_action('D6_1') })
+       | How much time did you spend on your health condition or its consequences | ${ D6_4 } | [Edit](${ url_action('D6_1') })
+       | How much have you been emotionally affected by your health condition | ${ D6_5 } | [Edit](${ url_action('D6_1') })
+       | How much has your health been a drain on the financial resources of you or your family | ${ D6_6 } | [Edit](${ url_action('D6_1') })
+       | How much of a problem did your family have because of your health problems | ${ D6_7 } | [Edit](${ url_action('D6_1') })
+       | How much of a problem did you have in doing things by yourself for relaxation or pleasure | ${ D6_8 } | [Edit](${ url_action('D6_1') }) 
+
+  <span class="KWscorestyle"> 
+    Overall Score of WHODAS Assessment = ${ overall_score }%
+  <span/> 
+continue button field: score_part2
+---
+code: | 
+  domain_1 = (D1_1 + D1_2 + D1_3 + D1_4 + D1_5 + D1_6) / 6
+  domain_2 = (D2_1 + D2_2 + D2_3 + D2_4 + D2_5) / 5
+  domain_3 = (D3_1 + D3_2 + D3_3 + D3_4) / 4
+  domain_4 = (D4_1 + D4_2 + D4_3 + D4_4 + D4_5) / 5
+  domain_5 = (D5_1 + D5_2 + D5_3 + D5_4 + D5_5 + D5_6 + D5_7 + D5_8) / 8
+  domain_6 = (D6_1 + D6_2 + D6_3 + D6_4 + D6_5 + D6_6 + D6_7 + D6_8) / 8
+  average_all = ((domain_1 + domain_2 + domain_3 + domain_4 + domain_5 + domain_6) / 6) 
+--- 
+code: |
+  part_1 = (D1_1 + D1_2 + D1_3 + D1_4 + D1_5 + D1_6) / 24
+  part_2 = (D2_1 + D2_2 + D2_3 + D2_4 + D2_5) / 20
+  part_3 = (D3_1 + D3_2 + D3_3 + D3_4) / 16
+  part_4 = (D4_1 + D4_2 + D4_3 + D4_4 + D4_5) / 20
+  part_5 = (D5_1 + D5_2 + D5_3 + D5_4 + D5_5 + D5_6 + D5_7 + D5_8) / 32
+  part_6 = (D6_1 + D6_2 + D6_3 + D6_4 + D6_5 + D6_6 + D6_7 + D6_8) / 32
+  overall_score = ((part_1 + part_2 + part_3 + part_4 + part_5 + part_6) / 6) * 100
+---
+code: | 
+  total_1 = D1_1 + D1_2 + D1_3 + D1_4 + D1_5 + D1_6
+  total_2 = D2_1 + D2_2 + D2_3 + D2_4 + D2_5
+  total_3 = D3_1 + D3_2 + D3_3 + D3_4
+  total_4 = D4_1 + D4_2 + D4_3 + D4_4 + D4_5
+  total_5 = D5_1 + D5_2 + D5_3 + D5_4 + D5_5 + D5_6 + D5_7 + D5_8
+  total_6 = D6_1 + D6_2 + D6_3 + D6_4 + D6_5 + D6_6 + D6_7 + D6_8
+---
