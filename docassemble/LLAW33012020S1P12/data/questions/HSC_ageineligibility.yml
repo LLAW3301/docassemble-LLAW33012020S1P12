@@ -1,4 +1,7 @@
 ---
+include: 
+  - HSC_personalinfo.yml
+---
 # This is the ineligible endpoint 
 event: endpoint['ineligibleduetoage']
 question: Eligibility Requirements Not Met 
@@ -8,6 +11,94 @@ subquestion:  |
   The client is ${ client.age_in_years() } and is **over the age of 65**. 
   
   The client is **not eligible** for the NDIS. 
+  
+  <span class="KWsupportstyle">
+    The below are some alternative supports which the client may be able to access: 
+  </span>  
+  <span class="KWlinkstyle">
+    Aboriginal and Torres Strait Islander Australians
+  </span> 
+  
+  - [First Peoples Disability Network Australia](https://fpdn.org.au)  
+  - [Community Development Programme](https://www.niaa.gov.au/indigenous-affairs/employment/cdp)
+  - [National Aboriginal Community Controlled Health Organisation](https://www.naccho.org.au/)
+  
+  <span class="KWlinkstyle">
+    Advocacy 
+  </span>
+  
+  - [Disability Advocacy Network Australia](https://www.dana.org.au/)
+  - [National Disability Advocacy Program](https://www.dss.gov.au/our-responsibilities/disability-and-carers/program-services/for-people-with-disability/national-disability-advocacy-program-ndap)
+ 
+   <span class="KWlinkstyle">
+     Crisis Supports 
+   </span>
+   
+  - [Lifeline](https://www.lifeline.org.au/)
+  - [Beyond Blue](https://www.beyondblue.org.au/)
+  - [Kids Help Line](https://kidshelpline.com.au/)
+  - [Suicide Call Back Service](https://www.suicidecallbackservice.org.au/)
+  
+  <span class="KWlinkstyle">
+    Culturally and Linguistically Diverse Australians
+  </span>
+  
+  - [National Ethnic Disability Alliance](http://www.neda.org.au/)
+  - [Multicultural Disability Advocacy Association](http://mdaa.org.au/)
+  - [Translating and Interpreting Service](https://www.tisnational.gov.au/)
+  
+  <span class="KWlinkstyle">
+    Education
+  </span>
+  
+  - [Assistance for Isolated Children Scheme](https://www.humanservices.gov.au/individuals/services/centrelink/assistance-for-isolated-children-scheme)
+  - [Department of Education - including Disability Standards for Education and Higher Education Disability Support Program](https://www.education.gov.au/students-disability)
+  - [Positive Partnerships](http://www.positivepartnerships.com.au/)
+  
+  <span class="KWlinkstyle">
+    Employment 
+  </span>
+  
+  - [Disability Employment Services](https://www.dss.gov.au/our-responsibilities/disability-and-carers/programmes-services/disability-employment-services)
+  - [JobAccess - including Employment Assistance Fund](https://www.jobaccess.gov.au/)
+  
+  <span class="KWlinkstyle">
+    Health Interface 
+  </span>
+  
+  - [Australian Hearing](https://www.hearing.com.au/)
+  - [Primary Health Networks](http://www.health.gov.au/internet/main/publishing.nsf/Content/PHN-Home)
+   
+  <span class="KWlinkstyle">
+    Housing
+  </span> 
+  
+  - [Disability Housing](http://www.disabilityhousing.com.au/)
+  - [Carer Getaway](https://www.carergateway.gov.au/home-modifications)
+  - [Home Modification Australia](http://www.moda.org.au/)
+  
+  <span class="KWlinkstyle">
+    Mental Health 
+  </span>
+  
+  - [Beyond Blue](https://www.beyondblue.org.au/)
+  - [Mental Health Australia](https://mhaustralia.org/need-help)
+  - [Head to Health](https://headtohealth.gov.au/)
+  
+  <span class="KWlinkstyle">
+    Support for Older People with Disability
+  </span> 
+  
+  - [My Aged Care](https://www.myagedcare.gov.au/)
+  
+  <span class="KWlinkstyle">
+    Transport
+  </span> 
+  
+  - [Carer Getaway](https://www.carergateway.gov.au/transport-services)
+  - [Mobility Allowance](https://www.humanservices.gov.au/individuals/services/centrelink/mobility-allowance)
+  - [Australian Disability Parking Scheme](https://www.dss.gov.au/our-responsibilities/disability-and-carers/programmes-services/for-people-with-disability/australian-disability-parking-scheme)
+
 
 buttons: 
   - Exit: restart
