@@ -2,15 +2,21 @@
 terms: 
   primary disability: |
      This is the disability that has the most impact on the client’s daily life
+  disability: | 
+    There is a reduction or loss of an ability to perform an activity which results from an impairment. 
+  impairment: | 
+    A loss of, or damage to, a physical, sensory or mental function. 
 ---
 question: Client's Disability Information 
 subquestion: |
 fields: 
-  - Is the client seeking support from the NDIS in relation to their disability or injury?: potential_disability
+  - Is the client seeking support from the NDIS in relation to their {disability} or injury?: potential_disability
     datatype: yesnoradio
-  - Client's {Primary Disability}: primary_disability
+  - Client's {Primary Disability} (if known): primary_disability
+    required: False
   - Please list any other disabilities (if any): other_disability 
     required: False
+    input type: area
 section: disability 
 ---
 code: |

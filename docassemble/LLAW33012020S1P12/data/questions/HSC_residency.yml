@@ -1,46 +1,54 @@
 ---
-terms:
-      Australian citizen: |
-        Were you born in Australia, or have you received official citizenship?
+objects:
+  - address: Address
 ---
-question: Personal Information of Client  
+terms:
+  Australian citizen: | 
+    Were you born in Australia, or have received official citizenship by adoption, descent, or conferral?
+  permanently: | 
+    Permanently means you normally live in Australia on a long-term basis
+  type of visa: | 
+    - A **permanent visa** gives the holder permission to remain in Australia indefinitely.
+    
+    - A person is a **protected SCV holder** if the person arrived in Australia on a New Zealand passport and were either: 
+    
+      - in Australia on 26 February 2001; or
+    
+      - in Australia for 12 months in the 2 years immediately before 26 February 2001 and returned to Australia after that day
+---
+question: Client's Personal Information  
 subquestion: |
 fields:
-  - Are you of Aboriginal or Torrens Strait Islander origin?: client_origin
+  - Are you of Aboriginal or Torres Strait Islander origin?: client_origin
     datatype: radio
     choices: 
       - No
       - Yes - Aboriginal
-      - Yes - Torrens Strait Islander 
-      - Yes - Aboriginal and Torrens Strait Islander 
+      - Yes - Torres Strait Islander 
+      - Yes - Aboriginal and Torres Strait Islander 
       - Do not wish to disclose  
   - Country of Birth: client_birthcountry
     code: |
       countries_list()
     default: Australia
-  - Are you living in Australia permanently?: client_permanent
-    datatype: radio
-    choices: 
-      - Yes 
-      - No
+  - Are you living in Australia {permanently}?: client_permanent
+    datatype: yesnoradio
   - Are you an {Australian citizen}?: client_citizen
     datatype: radio
     choices: 
       - Yes 
       - No
-  - If no, what type of visa do you have?: client_noncitizen
+  - If no, what {type of visa} do you have?: client_noncitizen
     show if: 
       variable: client_citizen
       is: No
+    datatype: radio
     choices: 
       - Permanent visa
       - Protected special category visa
       - Others
-  - Others (please specify): client_noncitizenother
-    show if: 
-      variable: client_noncitizen
-      is: Others
   - Current home or residential address: client_address
+    required: False
   - State: client_state
     choices: 
       - South Australia
@@ -51,13 +59,17 @@ fields:
       - Western Australia
     default: South Australia
   - Postcode: client_postcode
+    required: False
 section: residency
 ---
-code: |
-  if client_citizen and client_permanent:
+code: | 
+  if client_permanent and client_citizen != 'No': 
     client_residency = True
-  elif client_permanent and client_noncitizen:
+  elif client_permanent and client_noncitizen != 'Others': 
     client_residency = True
+  elif client_permanent and client_citizen != 'Yes': 
+    if client_permanent != 'Yes' or client_noncitizen == 'Others':
+      client_residency = False  
   else:
     client_residency = False
 ---
