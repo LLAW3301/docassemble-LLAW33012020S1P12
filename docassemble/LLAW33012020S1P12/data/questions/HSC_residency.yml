@@ -1,0 +1,86 @@
+---
+objects:
+  - address: Address
+---
+terms:
+  Australian citizen: | 
+    Were you born in Australia, or have received official citizenship by adoption, descent, or conferral?
+  permanently: | 
+    Permanently means you normally live in Australia on a long-term basis
+---
+question: Client's Personal Information  
+subquestion: |
+fields:
+  - Do you identify as Aboriginal or Torres Strait Islander?: client_origin
+    datatype: radio
+    choices: 
+      - No
+      - Yes - Aboriginal
+      - Yes - Torres Strait Islander 
+      - Yes - Aboriginal and Torres Strait Islander 
+      - Do not wish to disclose  
+    default: Do not wish to disclose
+  - Country of Birth: client_birthcountry
+    code: |
+      countries_list()
+    default: Australia
+  - Are you living in Australia {permanently}?: client_permanent
+    datatype: yesnoradio
+    default: True
+  - Are you an {Australian citizen}?: client_citizen
+    datatype: radio
+    choices: 
+      - Yes 
+      - No
+    default: Yes
+  - If no, what type of visa do you have?: client_noncitizen
+    show if: 
+      variable: client_citizen
+      is: No
+    datatype: radio
+    choices: 
+      - Permanent visa: Permanent visa 
+        help: |
+          A **permanent visa** gives the holder permission to remain in Australia indefinitely.
+      - Protected special category visa: Protected special category visa
+        help: |
+          A person is a **protected SCV holder** if the person arrived in Australia on a New Zealand passport and were either: 
+          
+            - in Australia on 26 February 2001; or
+            
+            - in Australia for 12 months in the 2 years immediately before 26 February 2001 and returned to Australia after that day
+      - Others
+  - Current home or residential address: client_address
+    required: False
+    default: 258 Hutt St, Adelaide 
+  - State: client_state
+    choices: 
+      - South Australia
+      - New South Wales
+      - Queensland
+      - Tasmania 
+      - Victoria 
+      - Western Australia
+    default: South Australia
+  - Postcode: client_postcode
+    required: False
+    default: 5000
+section: residency
+---
+code: |
+  if client_permanent:
+    client_displaypermanent = 'Yes'
+  else:
+    client_displaypermanent = 'No'
+---
+code: | 
+  if client_permanent and client_citizen != 'No': 
+    client_residency = True
+  elif client_permanent and client_noncitizen != 'Others': 
+    client_residency = True
+  elif client_permanent and client_citizen != 'Yes': 
+    if client_permanent != 'Yes' or client_noncitizen == 'Others':
+      client_residency = False  
+  else:
+    client_residency = False
+---

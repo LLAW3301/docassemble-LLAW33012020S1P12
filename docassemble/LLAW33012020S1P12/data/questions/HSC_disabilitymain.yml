@@ -1,0 +1,586 @@
+---
+variable name: KWdifficulties
+use objects: True
+data:
+  - diseases, illnesses or other health problems;
+  - injuries;
+  - disabilities;
+  - mental or emotional problems; 
+  - problems with alcohol and/or drugs
+---
+variable name: KWactivity
+use objects: True
+data:
+  - increased effort 
+  - discomfort or pain
+  - slowness 
+  - changes in the way you do the activity 
+---
+variable name: KWscore 
+use objects: True
+data: 
+  - 0 = no difficulty
+  - 1 = mild difficulty 
+  - 2 = moderate difficulty 
+  - 3 = severe difficulty 
+  - 4 = extreme difficulty or cannot do
+  - N/A = Not Applicable
+---
+question: Assessment of Client’s Functional Capacity
+subquestion: |
+  ##### **PLEASE READ THE FOLLOWING INFORMATION TO THE CLIENT:** 
+   
+  The following questionnaire asks about difficulties due to health conditions. Health conditions can include:
+  
+  % for KWitem in KWdifficulties:
+  - ${ KWitem }
+  % endfor
+  
+  When I ask you about difficulties in doing an activity think about: 
+  
+  % for KWitem in KWactivity:
+  - ${ KWitem }
+  % endfor
+   
+  When answering, I’d like you to think back **over the past 30 days.** 
+  
+  I would also like you to answer these questions thinking about how much difficulty you have had, on average, over the past 30 days, while doing the activity as you usually do it.
+
+  #####**Use the number 0, 1, 2, 3 and 4 when responding.**
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+section: assessment
+continue button field: continue_disability_assessment
+---
+question: Part 1 - Understanding and Communicating  
+subquestion: |
+  *This section of the questionnaire will ask you about your understanding and communication skills.*
+
+  Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 1
+fields:
+  - Concentrating on doing something for ten minutes?: D1_1
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A 
+    default: 3  
+    help: | 
+      Encourage the client to think about their concentration in usual circumstances, rather than when they are preoccupied by a problem or are in an unusually distracting environment.
+  - Remembering to do important things?: D1_2
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 2
+    help: | 
+       Ask clients how well they remember to do things that are important to them or to their family.  
+       It does not refer to remembering irrelevant content or detailed information from the past. 
+  - Analysing and finding solutions to problems in day-to-day life? : D1_3
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 0 
+    help: | 
+      Ask client to identify a problem they encountered in the past 30 days, and ask them to consider how well they identified that a problem existed; broke it down into manageable parts; developed a list of possible solutions; determined the pros and cons of each solution; determined the best solution given all considerations; executed and evaluated the chosen solution; and selected an alternate solution if the first choice was not successful.
+  - Learning a new task, for example, learning how to get to a new place?: D1_4
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 1   
+    help: | 
+      Other than learning how to get to a new place, encourage clients to to think of other situations in the past month where learning something new was required, such as a new game or craft. 
+  - Generally understanding what people say?: D1_5
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 2   
+    help: | 
+      Ask clients to consider their usual mode of communication (e.g. spoken language, sign language, use of an assistive device such as a hearing aid, etc.) and rate the overall degree of difficulty they have in understanding the messages of others. 
+      Difficulties due to different mother tongues should be excluded when rating this question. 
+  - Starting and maintaining a conversation?: D1_6
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 1 
+    help: | 
+      Ask clients to consider any and all other factors related to their disability and relevant to them in starting and maintaining a conversation. 
+      Examples might include hearing loss, language problems (e.g. as after a stroke), stuttering and anxiety.
+
+continue button field: assessment_part1
+---
+question: Part 2 - Getting Around 
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in getting around.*
+  
+   Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 2
+fields:
+  - Standing for long periods, such as 30 minutes?: D2_1
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 0  
+    help: |
+      This question seeks information on the difficulty the client has in maintaining a standing position for a long period, such as 30 minutes. 
+  - Standing up from sitting down?: D2_2
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 3 
+    help: | 
+      This question refers to standing up from sitting in a chair, on a bench or a toilet. It does not refer to standing up from sitting on the floor.
+  - Moving around inside your home?: D2_3
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 1
+    help: | 
+      This question refers to moving from room to room, and moving within rooms, using assistive devices or personal help that is usually in place. If a client lives in a house with multiple floors, this question also includes getting from one floor to another, as needed.
+  - Getting out of your home?: D2_4
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: | 
+      This question seeks information about the client's physical aspects (mobility) of getting out of the home and also their emotional or mental aspects of leaving the home (e.g. depression, anxiety, etc.) 
+  - Walking a long distance, such as a kilometre (or equivalent)?: D2_5
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 1 
+    help: | 
+      One kilometre is equivalent to 0.62 miles. 
+continue button field: assessment_part2
+---
+question: Part 3 - Self-Care  
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in taking care of yourself*
+  
+   Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 3
+fields:
+  - Washing your whole body?: D3_1
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 2 
+    help: | 
+      This question refers to clients washing their entire body in whatever manner is usual for their culture. If clients report that they have not washed their bodies in the past 30 days, ask whether this is due to their disability. If clients report that it is due to their disability, then score the item '4'. If clients report that the lack of washing is not due to their disability, then score the item '0'.
+  - Getting dressed?: D3_2
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 3 
+    help: |
+      This question includes all aspects of dressing the upper and lower body. Ask clients to consider activities such as gathering clothing from storage areas (i.e. closet, dressers) and securing buttons, tying knots, etc., when scoring. 
+  - Eating?: D3_3 
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 0 
+    help: | 
+      This question refers to feeding oneself (cutting food, eating food or drink from a plate or glass to the mouth), swallowing both food and drink, and mental or emotional factors that may contribute to difficulty in eating, such as anorexia, bulimia, or depression. This question does not refer to meal preparation.
+  - Staying by yourself for a few days?: D3_4
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4 
+      - N/A
+    default: N/A
+    help: |
+      This question is to determine any difficulty clients have in staying alone for an extended period and remaining safe.
+continue button field: assessment_part3
+---
+question: Part 4 - Getting Along with People  
+subquestion: |
+  *This section of the questionnaire will ask you about your difficulties in getting along with people.*
+  
+  *'People' may be those with whom you are intimate or knows well (e.g. spouse or partner, family members or close friends), or those whom you do not know at all (e.g. strangers).*
+  
+  Please remember that I am only asking only about difficulties that are due to your disability or injury. 
+  
+  Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 4
+fields:
+  - Dealing with people you don't know?: D4_1
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4 
+      - N/A
+    default: 3 
+    help: |
+      This question refers to interactions with strangers in any situation, such as shop-keepers, service personnel, or people from whom one is asking directions. Ask clients to consider both approaching such individuals, and interacting successfully with them to obtain a desired outcome.
+  - Maintaining a friendship?: D4_2
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 0
+    help: | 
+      This question includes staying in touch, interacting with friends in customary ways, initiating activities with friends and participating in activities when invited.
+  - Getting along with people who are close to you?: D4_3
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 0
+    help: | 
+      Ask clients to consider any relationships that they define as close. These may be within or outside the family.
+  - Making new friends?: D4_4
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: | 
+      This question includes seeking opportunities to meet new people, following up on invitations to get together or social and communication actions to make contact and to develop a friendship.
+  - Sexual activities?: D4_5
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: | 
+      Ask client to think about what they consider to be sexual activities when answering this question. If asked for clarification, explain that this question refers to: sexual intercourse, hugging, kissing, fondling, or other intimate or sexual acts. 
+continue button field: assessment_part4
+---
+question: Part 5 - Life Activities
+subquestion: |
+  *This section of the questionnaire will ask you about activities involved in maintaining your household, and in caring for the people who you live with or are close to. These activities include cooking, cleaning, shopping, caring for others and caring for your belongings.* 
+  
+   Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+  
+  **In the past 30 days, how much difficulty did you have in:**
+section: part 5
+fields:
+  - Taking care of your household responsibilities?: D5_1
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 3 
+    help: |
+      Any difficulty that clients encounter in maintaining the household and in caring for family members or other people they are close to. Ask clients to consider all types of household or family needs, including physical, emotional, financial and psychological needs. Household responsibilities may include managing finances, car and home repairs, caring for the outside area of the home, picking up children from school etc. In the case where clients do not have a stable dwelling place, there are still activities surrounding the upkeep and maintenance of their belongings. This question refers to those activities.
+  - Doing your most important household tasks well?: D5_2
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 4
+    help: |
+      Household tasks may include managing finances, car and home repairs, caring for the outside area of the home, picking up children from school etc. In the case where clients do not have a stable dwelling place, there are still activities surrounding the upkeep and maintenance of their belongings. This question refers to those activities.
+  - Getting all the household work done that you needed to do?: D5_3
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 4
+    help: | 
+      Ask client to provide ratings based on their own appraisal of how well household tasks are completed and whether needed household work gets done. 
+      
+      Clients should score based only on the difficulties faced due to their disability, not those that may be experienced for other reasons such as not having enough time (unless this reason is somehow linked to their disability).
+  - Getting your household work done as quickly as needed?: D5_4
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 4
+    help: | 
+      This question refers to the timely meeting of expectations and needs of those clients whom one lives with (or is close to), in relation to household tasks and responsibilities.
+  - Your day-to-day work/school?: D5_5
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: | 
+      This includes issues such as attending on time, responding to supervision, supervising others, planning and organizing, meeting expectations in the workplace and any other relevant activities.
+  - Doing your most important work/school tasks well?: D5_6
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: | 
+      Doing work or school tasks “well” refers to completing them as expected by a supervisor or teacher, by clients’ own standards or as specified in the performance criteria for a job or school.
+  - Getting all the work done that you need to do?: D5_7
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: |
+      This question refer to meeting work quantity expectations and time deadlines.
+  - Getting your work done as quickly as needed?: D5_8
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: N/A
+    help: |
+      This question refer to meeting work quantity expectations and time deadlines.
+continue button field: assessment_part5
+---
+question: Part 6 - Participation in Society 
+subquestion: |
+  *This section of the questionnaire will ask you about your participation in society and the impact of your disability/injury on you and your family.* 
+
+  Use the number 0, 1, 2, 3 and 4 when responding. 
+  
+  % for KWitem in KWscore:
+  - ${ KWitem }
+  % endfor
+section: part 6
+fields:
+  - How much of a problem did you have joining in community activities (for example, festivities, religious or other activities) in the same way as anyone else can?: D6_1
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 3
+    help: |
+      Community activities may also include attending town meetings, fairs, leisure or sporting activities in the town, neighbourhood or community. The relevant issue being asked in this question is whether clients can participate in these activities or whether there are inhibitors to them doing so. 
+  - How much of a problem did you have because of barriers or hindrances in the world around you?: D6_2
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 2
+    help: |
+      Ask clients to determine how much has stood in the way of clients being able to realise aspirations and plans as other people can. The concept here is what clients face in terms of external interference created by the world or other people. Barriers could be physical (e.g. lack of ramps to get into church) and social (e.g. negative attitudes of other people that create barriers). 
+  - How much of a problem did you have living with dignity because of the attitudes and actions of others?: D6_3
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 3
+    help:  |
+      Ask clients to consider problems they have had in living with dignity or pride in who they are, what they are doing and how they live their lives.
+  - How much time did you spend on your health condition or its consequences?: D6_4
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 4
+    help: |
+      This question seeks to capture an overall rating or snapshot of the portion of the past 30 days spent by clients in dealing with any aspect of their health condition. This may include time spent in activities such as visiting a treatment centre; managing financial matters related to their health condition, such as payment of bills, reimbursement of insurance or benefits; and obtaining information about the health condition or in educating others about it.
+  - How much have you been emotionally affected by your health condition?: D6_5
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 2
+    help: |
+      Emotions may include anger, sorrow, regret, thankfulness, appreciation, or any other positive or negative emotions.
+  - How much has your health been a drain on the financial resources of you or your family?: D6_6
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 3
+    help: |
+      Family is broadly defined to include relatives; however, it also includes those to whom respondents are not related but consider to be like family, including those who may be sharing in the financial aspects of the health condition. The focus of this question is on the depletion of personal savings or current income to meet the needs created by a health condition. If clients have experienced a significant financial drain but their family has not, or vice versa, they should respond to the question based on the drain experienced by either party.
+  - How much of a problem did your family have because of your health problems?: D6_7
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 1
+    help: |
+      The focus here is on problems created by the interaction of the client’s health condition with the world in which the person lives. The question seeks information on problems that are borne by the family; these might include financial, emotional, physical problems, etc.
+  - How much of a problem did you have in doing things by yourself for relaxation or pleasure?: D6_8
+    input type: radio
+    choices: 
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - N/A
+    default: 2
+    help: |
+      Ask clients to consider leisure interests that they currently pursue and those they would like to pursue but cannot due to the health condition and restrictions imposed by society.
+continue button field: assessment_part6
+---
