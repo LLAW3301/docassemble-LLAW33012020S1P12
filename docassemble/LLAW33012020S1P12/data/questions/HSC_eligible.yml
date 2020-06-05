@@ -1,0 +1,37 @@
+---
+terms: 
+  50%: |
+    On average, each domain has an average score of 3. 
+  average score of 3: |
+    Section 24(1)(c) of the NDIS Act states that a prospective participant may meet the disability requirement if their impairment/s result in substantially reduced functional capacity to undertake, or psychosocial functioning in undertaking, one or more of the following relevant activities: 
+    
+      - communication;
+      - social interaction;
+      - learning;
+      - mobility;
+      - self-care; or
+      - self-management.
+---
+event: endpoint['eligible']
+question: Eligibility Requirement Met 
+subquestion: |
+  Thank you for completing the NDIS Eligibility Questionnaire. 
+  
+  The client's overall score for the WHODAS Assessment is **${ overall_score }%.**
+  
+  % if client_score >= 50:
+  As the client's score is above the {threshold score of 50%}, the client **meets the eligibility criteria for the NDIS** and is likely to be eligible for the NDIS.
+  % else: 
+  Whilst the client's score is not above the threshold score of {50%}, however as the client has an {average score of 3} for a particular domain, the client **meets the eligibility criteria for the NDIS** and is likely to be eligible for the NDIS.
+  % endif    
+
+attachment: 
+  - name: HSC NDIS Client Response Document
+    filename: NDIS Client Response
+    docx template file: NDIS_Form.docx
+    valid formats: 
+    - pdf 
+ 
+buttons: 
+  - Finish: restart 
+---
