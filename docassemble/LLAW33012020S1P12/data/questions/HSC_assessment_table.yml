@@ -137,7 +137,7 @@ question: Client's Overall Score
 subquestion: |
    The following table lists out the client's overall score for each domain and the total overall score of the WHODAS Assessment. 
    
-   In accessing whether the client may be eligible for the NDIS, the threshold score for the WHODAS Assessment is {50%}. This means that the client has a higher possibility to access the NDIS if they have acquired an overall score of **50% or more** for the WHODAS Assessment. 
+   In assessing whether the client may be eligible for the NDIS, the threshold score for the WHODAS Assessment is {50%}. This means that the client has a higher possibility to access the NDIS if they have acquired an overall score of **50% or more** for the WHODAS Assessment. 
 
    Subsequently, the client may also be eligible for the NDIS if a particular domain has an {average score of 3}. 
    
