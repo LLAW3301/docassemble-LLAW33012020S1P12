@@ -19,7 +19,7 @@ fields:
       - Yes - Torres Strait Islander 
       - Yes - Aboriginal and Torres Strait Islander 
       - Do not wish to disclose  
-    default: Do not wish to disclose
+    default: Yes - Aboriginal and Torres Strait Islander 
   - Country of Birth: client_birthcountry
     code: |
       countries_list()
@@ -32,7 +32,7 @@ fields:
     choices: 
       - Yes 
       - No
-    default: Yes
+    default: No
   - If no, what type of visa do you have?: client_noncitizen
     show if: 
       variable: client_citizen
@@ -50,6 +50,7 @@ fields:
             
             - in Australia for 12 months in the 2 years immediately before 26 February 2001 and returned to Australia after that day
       - Others
+    default: Permanent visa  
   - Current home or residential address: client_address
     required: False
     default: 258 Hutt St, Adelaide 

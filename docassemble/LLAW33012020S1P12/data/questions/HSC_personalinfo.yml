@@ -19,11 +19,12 @@ fields:
       - Gender Diverse
       - Non-binary
       - Do not wish to specify  
-    default: Do not wish to specify
+    default: Gender Diverse
 section: personal
 ---
 code: |
-  if client.age_in_years() <= 65:
+  if ((client.age_in_years() >= 7) and 
+      (client.age_in_years() <= 65)):
     client_age = True
   else:
     client_age = False

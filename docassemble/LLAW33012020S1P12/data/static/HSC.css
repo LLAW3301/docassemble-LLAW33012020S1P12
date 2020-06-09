@@ -96,3 +96,17 @@ body{
 .KWreviewscorestyle{
     color: rgba(229, 104, 20);
 }  
+
+/* ... and when active state */
+.daclickable.nav-link.danavlink.active{
+  color: rgba(255,255,255);
+  background-color: rgba(242, 118, 49, 0.80);
+  border-color: rgba(137,169,217, 0.25);  
+}
+
+/* ... and when active state */
+.nav-link.danavlink.active{
+  color: rgba(255, 255,255);
+  background-color: rgba(242, 118, 49, 0.80);
+  border-color: rgba(137,169,217, 0.25);  
+}

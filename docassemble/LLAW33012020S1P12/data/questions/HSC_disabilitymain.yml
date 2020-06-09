@@ -46,12 +46,13 @@ subquestion: |
   
   I would also like you to answer these questions thinking about how much difficulty you have had, on average, over the past 30 days, while doing the activity as you usually do it.
 
-  #####**Use the number 0, 1, 2, 3 and 4 when responding.**
+  #####**Use the number 0, 1, 2, 3, 4 or N/A when responding.**
   
   % for KWitem in KWscore:
   - ${ KWitem }
   % endfor
 section: assessment
+
 continue button field: continue_disability_assessment
 ---
 question: Part 1 - Understanding and Communicating  
@@ -167,7 +168,7 @@ fields:
       - 3
       - 4
       - N/A
-    default: 0  
+    default: 3  
     help: |
       This question seeks information on the difficulty the client has in maintaining a standing position for a long period, such as 30 minutes. 
   - Standing up from sitting down?: D2_2
