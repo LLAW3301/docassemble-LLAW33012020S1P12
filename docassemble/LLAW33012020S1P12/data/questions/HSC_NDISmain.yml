@@ -178,3 +178,7 @@ default screen parts:
     </div>
     </div>   
 ---
+images:
+ tick icon: tickicon.png
+ cross icon: crossicon.png
+---

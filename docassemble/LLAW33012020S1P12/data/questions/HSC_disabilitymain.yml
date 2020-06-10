@@ -204,7 +204,7 @@ fields:
       - 3
       - 4
       - N/A
-    default: N/A
+    default: 0
     help: | 
       This question seeks information about the client's physical aspects (mobility) of getting out of the home and also their emotional or mental aspects of leaving the home (e.g. depression, anxiety, etc.) 
   - Walking a long distance, such as a kilometre (or equivalent)?: D2_5
@@ -279,7 +279,7 @@ fields:
       - 3
       - 4 
       - N/A
-    default: N/A
+    default: 1
     help: |
       This question is to determine any difficulty clients have in staying alone for an extended period and remaining safe.
 continue button field: assessment_part3
@@ -346,7 +346,7 @@ fields:
       - 3
       - 4
       - N/A
-    default: N/A
+    default: 1
     help: | 
       This question includes seeking opportunities to meet new people, following up on invitations to get together or social and communication actions to make contact and to develop a friendship.
   - Sexual activities?: D4_5

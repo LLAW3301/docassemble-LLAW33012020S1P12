@@ -13,6 +13,7 @@ terms:
       - self-management.
 ---
 event: endpoint['eligible']
+decoration: tick icon 
 question: Eligibility Requirements Met 
 subquestion: |
   Thank you for completing the NDIS Eligibility Questionnaire. 

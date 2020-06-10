@@ -4,6 +4,7 @@ include:
 ---
 event: endpoint['ineligibleduetoresidency']
 question: Eligibility Requirements Not Met 
+decoration: cross icon
 subquestion: |
   To access the NDIS, the client must **live in Australia** and:
   

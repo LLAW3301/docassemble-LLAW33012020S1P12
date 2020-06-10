@@ -4,6 +4,7 @@ include:
 ---
 # This is the ineligible endpoint 
 event: endpoint['ineligibleduetoage']
+decoration: cross icon
 question: Eligibility Requirements Not Met 
 subquestion:  | 
   To be eligible for the NDIS, the client needs to be between 7 and 65 years old. 

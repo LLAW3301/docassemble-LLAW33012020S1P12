@@ -13,6 +13,7 @@ include:
   - HSC_assessment_table.yml
 ---
 event: endpoint['ineligible']
+decoration: cross icon
 question: Eligibility Requirements Not Met 
 subquestion: |
   Thank you for completing the HSC NDIS Navigator Questionnaire. 

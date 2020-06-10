@@ -1,5 +1,6 @@
 ---
 event: endpoint['ineligibleduetonodisability']
+decoration: cross icon
 question: Eligibility Requirements Not Met 
 subquestion: |
   You have indicated that you are not seeking support from the NDIS in relation to your disability or injury.
