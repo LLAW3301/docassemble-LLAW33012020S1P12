@@ -1,0 +1,27 @@
+objects: 
+  - client: Individual
+---
+question: Client's Personal Information 
+subquestion: |
+fields: 
+  - First Name: client_firstname
+  - Last Name: client_lastname
+  - Date of Birth: client.birthdate
+    datatype: date
+  - Gender: client_gender
+    datatype: radio
+    choices: 
+      - Male 
+      - Female
+      - Gender Diverse
+      - Non-binary
+      - Do not wish to specify  
+section: personal
+---
+code: |
+  if ((client.age_in_years() >= 7) and 
+      (client.age_in_years() <= 65)):
+    client_age = True
+  else:
+    client_age = False
+---
