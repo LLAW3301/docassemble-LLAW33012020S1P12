@@ -1,0 +1,318 @@
+---
+code: |
+  menu_items = [ action_menu_item('Review Answers', 'review_answers') ]
+---
+include: 
+  - HSC_disabilitymain.yml
+---
+terms: 
+  50%: |
+    On average, each domain has an average score of 3. 
+  average score of 3: |
+    Section 24(1)(c) of the NDIS Act states that a prospective participant may meet the disability requirement if their impairment/s result in substantially reduced functional capacity to undertake, or psychosocial functioning in undertaking, one or more of the following relevant activities: 
+    
+      - communication;
+      - social interaction;
+      - learning;
+      - mobility;
+      - self-care; or
+      - self-management.
+---
+event: review_answers
+question: Review of Client's Input Score
+review: 
+  - note: |
+      The following is the client's input score for each part of the Assessment.
+      
+      Please confirm if each of the following questions are scored correctly. 
+      
+      ***If entered incorrectly, please click on 'Edit' to modify answers.***
+
+  - Edit Part 1: D1_1
+    button: |
+      <span class="KWreviewpartstyle">
+        **PART 1: Communication and Understanding**
+      </span>
+      
+      - Concentrating on doing something for ten minutes = **${ D1_1 }**
+      - Remembering to do important things = **${ D1_2 }**
+      - Analysing and finding solutions to problems in day-to-day life = **${ D1_3 }**   
+      - Learning a new task = **${ D1_4 }**
+      - Generally understanding what people say = **${ D1_5 }**
+      - Starting and maintaining a conversation = **${ D1_6 }**
+  - note: |
+      <span class="KWreviewscorestyle">
+        **Part 1 Total Score = ${ part_1_sum }**
+      </span>
+   
+  - Edit Part 2: D2_2
+    button: |
+      <span class="KWreviewpartstyle">
+        **PART 2: Getting Around**
+      </span>
+      
+      - Standing for long periods, such as 30 minutes = **${ D2_1 }**
+      - Standing up from sitting down = **${ D2_2 }**
+      - Moving around inside your home = **${ D2_3 }**
+      - Getting out of your home = **${ D2_4 }**
+      - Walking a long distance, such as a kilometre (or equivalent) = **${ D2_5 }**
+  - note: |
+      <span class="KWreviewscorestyle">
+        **Part 2 Total Score = ${ part2_sum }**
+      </span>
+      
+  - Edit Part 3: D3_1
+    button: |
+      <span class="KWreviewpartstyle">
+        **PART 3: Self-Care**
+      </span>
+      
+      - Washing your whole body = **${ D3_1 }** 
+      - Getting dressed = **${ D3_2 }**    
+      - Eating = **${ D3_3 }**
+      - Staying by yourself for a few days = **${ D3_4 }**
+  - note: |
+      <span class="KWreviewscorestyle">
+        **Part 3 Total Score = ${ part3_sum }**
+      </span>
+      
+  - Edit Part 4: D4_1
+    button: |
+      <span class="KWreviewpartstyle">
+        **PART 4: Getting Along with People**
+      </span>
+      
+      - Dealing with people you don't know = **${ D4_1 }**
+      - Maintaining a friendship = **${ D4_2 }**   
+      - Getting along with people who are close to you = **${ D4_3 }** 
+      - Making new friends = **${ D4_4 }** 
+      - Sexual Activities = **${ D4_5 }**   
+  - note: |
+      <span class="KWreviewscorestyle">
+        **Part 4 Total Score = ${ part4_sum }**
+      </span>
+      
+  - Edit Part 5: D5_1
+    button: |
+      <span class="KWreviewpartstyle">
+        **PART 5: Life Activities**
+      </span>
+      
+      - Taking care of your household responsibilities = **${ D5_1 }** 
+      - Doing your most important household tasks well = **${ D5_2 }**
+      - Getting all the household work done that you needed to do = **${ D5_3 }**
+      - Getting your household work done as quickly as needed = **${ D5_4 }**
+      - Day-to-day work/school = **${ D5_5 }** 
+      - Doing your most important work/school tasks well = **${ D5_6 }**
+      - Getting all the work done that you need to do = **${ D5_7 }**
+      - Getting your work done as quickly as needed = **${ D5_8 }**
+  - note: |
+      <span class="KWreviewscorestyle">
+        **Part 5 Total Score = ${ part5_sum }**
+      </span>
+      
+  - Edit Part 6: D6_1
+    button: |
+      <span class="KWreviewpartstyle">
+        **PART 6: Participation in Society**
+      </span>
+      
+      - Joining in community activities the same way as anyone else can = **${ D6_1 }**
+      - How much of a problem did you have because of barriers or hindrances in the world around you = **${ D6_2 }**
+      - Living with dignity because of the attitudes and actions of others = **${ D6_3 }**
+      - How much time did you spend on your health condition or its consequences = **${ D6_4 }**
+      - How much have you been emotionally affected by your health condition = **${ D6_5 }** 
+      - How much has your health been a drain on the financial resources of you or your family = **${ D6_6 }** 
+      - How much of a problem did your family have because of your health problems = **${ D6_7 }**
+      - How much of a problem did you have in doing things by yourself for relaxation or pleasure = **${ D6_8 }** 
+  - note: |
+      <span class="KWreviewscorestyle">
+        **Part 6 Total Score = ${ part6_sum }**
+      </span>
+      
+continue button field: score_part1
+---
+question: Client's Overall Score 
+subquestion: |
+   The following table lists out the client's overall score for each domain and the total overall score of the WHODAS Assessment. 
+   
+   In assessing whether the client may be eligible for the NDIS, the threshold score for the WHODAS Assessment is {50%}. This means that the client has a higher possibility to access the NDIS if they have acquired an overall score of **50% or more** for the WHODAS Assessment. 
+
+   Subsequently, the client may also be eligible for the NDIS if a particular domain has an {average score of 3}. 
+   
+   **Note: The NDIA will make the final decision.**
+   
+   Domain    | Total Domain Score | Domain Score Percentage (%) | Average Domain Score 
+   ----------|---------------------|---------------------|---------------
+   1: Communication and Understanding | ${ part_1_sum } | ${ (overallpart_1) } | ${ averagedomain_1 }
+   2: Getting Around | ${ part2_sum } | ${ overallpart_2 } | ${ averagedomain_2 }
+   3: Self-Care | ${ part3_sum } | ${ overallpart_3 } | ${ averagedomain_3 }
+   4: Getting Along with People | ${ part4_sum } | ${ overallpart_4 } | ${ averagedomain_4 }
+   5: Life Activities | ${ part5_sum } | ${ overallpart_5 } | ${ averagedomain_5 }
+   6: Participation in Society | ${ part6_sum } | ${ overallpart_6 } | ${ averagedomain_6 }
+   
+
+    <span class="KWscorestyle"> 
+      Overall Score of WHODAS Assessment = ${ overall_score }%
+    </span> 
+section: score
+continue button field: final_page
+---
+code: |
+  overall_score = ("{:.2f}".format((((part_1 + part_2 + part_3 + part_4 + part_5 + part_6) / 6)) / 0.01))
+---
+code: |
+  total_score = part_1_sum + part2_sum + part3_sum + part4_sum + part5_sum + part6_sum
+---
+code: |
+  client_score = ((part_1 + part_2 + part_3 + part_4 + part_5 + part_6) / 6) * 100
+---
+code: |
+  average_domain = (part_1_domain + part2_domain + part3_domain + part4_domain + part5_domain + part6_domain) / 6
+---
+code: |
+  average_all = "{:.2f}".format(average_domain)
+---
+code: |
+  overallpart_1 = "{:.2f}".format((part_1) / 0.01)
+  overallpart_2 = "{:.2f}".format((part_2) / 0.01)
+  overallpart_3 = "{:.2f}".format((part_3) / 0.01)
+  overallpart_4 = "{:.2f}".format((part_4) / 0.01)
+  overallpart_5 = "{:.2f}".format((part_5) / 0.01)
+  overallpart_6 = "{:.2f}".format((part_6) / 0.01)
+---
+code: |
+  averagedomain_1 = "{:.2f}".format(part_1_domain)
+  averagedomain_2 = "{:.2f}".format(part2_domain)
+  averagedomain_3 = "{:.2f}".format(part3_domain)
+  averagedomain_4 = "{:.2f}".format(part4_domain)
+  averagedomain_5 = "{:.2f}".format(part5_domain)
+  averagedomain_6 = "{:.2f}".format(part6_domain)
+---
+code: |
+  part_1_sum = 0
+  part_1_total = 0
+  part_1_high_score = 4
+  part_1_ave = 0
+  part_1_avesum = 0
+  part_1_question = 1
+---
+code: |
+  for D1_item in [D1_1, D1_2, D1_3, D1_4, D1_5, D1_6]:
+    if D1_item != 'N/A':    
+      part_1_total += part_1_high_score
+      part_1_sum += int(D1_item)
+      part_1_ave += part_1_question 
+      part_1_avesum += int(D1_item)
+    if part_1_total != 0:
+      part_1 = part_1_sum / part_1_total
+    else:
+      part_1 = 0
+    if part_1_ave != 0:
+      part_1_domain = part_1_avesum / part_1_ave
+---
+code: |
+  part2_sum = 0 
+  part2_total = 0
+  part2_highscore = 4
+  part2_ave = 0
+  part2_avesum = 0
+  part2_question = 1
+---
+code: |
+  for D2_item in [D2_1, D2_2, D2_3, D2_4, D2_5]:
+    if D2_item != 'N/A':
+      part2_total += part2_highscore
+      part2_sum += int(D2_item)
+      part2_ave += part2_question 
+      part2_avesum += int(D2_item)
+  if part2_total != 0:
+    part_2 = part2_sum / part2_total 
+  else: part_2 = 0 
+  if part2_ave != 0:
+      part2_domain = part2_avesum / part2_ave
+---
+code: |
+  part3_sum = 0 
+  part3_total = 0
+  part3_highscore = 4
+  part3_ave = 0
+  part3_avesum = 0
+  part3_question = 1
+---
+code: |
+  for D3_item in [D3_1, D3_2, D3_3, D3_4]:
+    if D3_item != 'N/A':
+      part3_total += part3_highscore
+      part3_sum += int(D3_item) 
+      part3_ave += part3_question 
+      part3_avesum += int(D3_item)
+  if part3_total != 0:
+    part_3 = part3_sum / part3_total 
+  else: part_3 = 0 
+  if part3_ave != 0:
+      part3_domain = part3_avesum / part3_ave
+---
+code: |
+  part4_sum = 0 
+  part4_total = 0
+  part4_highscore = 4
+  part4_ave = 0
+  part4_avesum = 0
+  part4_question = 1
+---
+code: |
+  for D4_item in [D4_1, D4_2, D4_3, D4_4, D4_5]:
+    if D4_item != 'N/A':
+      part4_total += part4_highscore
+      part4_sum += int(D4_item)
+      part4_ave += part4_question 
+      part4_avesum += int(D4_item)
+  if part4_total != 0:
+    part_4 = part4_sum / part4_total 
+  else: part_4 = 0 
+  if part4_ave != 0:
+      part4_domain = part4_avesum / part4_ave
+---
+code: |
+  part5_sum = 0 
+  part5_total = 0
+  part5_highscore = 4
+  part5_ave = 0
+  part5_avesum = 0
+  part5_question = 1
+---
+code: |
+  for D5_item in [D5_1, D5_2, D5_3, D5_4, D5_5, D5_6, D5_7, D5_8]:
+    if D5_item != 'N/A':
+      part5_total += part5_highscore
+      part5_sum += int(D5_item)
+      part5_ave += part5_question 
+      part5_avesum += int(D5_item)
+  if part5_total != 0:
+    part_5 = part5_sum / part5_total 
+  else: part_5 = 0 
+  if part5_ave != 0:
+      part5_domain = part5_avesum / part5_ave
+---
+code: |
+  part6_sum = 0 
+  part6_total = 0
+  part6_highscore = 4
+  part6_ave = 0
+  part6_avesum = 0
+  part6_question = 1
+---
+code: |
+  for D6_item in [D6_1, D6_2, D6_3, D6_4, D6_5, D6_6, D6_7, D6_8]:
+    if D6_item != 'N/A':
+      part6_total += part6_highscore
+      part6_sum += int(D6_item)
+      part6_ave += part6_question 
+      part6_avesum += int(D6_item)
+  if part6_total != 0:
+    part_6 = part6_sum / part6_total 
+  else: part_6 = 0 
+  if part6_ave != 0:
+      part6_domain = part6_avesum / part6_ave
+---
