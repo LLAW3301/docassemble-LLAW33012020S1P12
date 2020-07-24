@@ -35,6 +35,6 @@ attachment:
  
 buttons: 
   - Finish: exit
-    https://huttstcentre.org.au
+    url: https://huttstcentre.org.au
   - Restart: restart
 ---
