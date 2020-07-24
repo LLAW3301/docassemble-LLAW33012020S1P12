@@ -34,5 +34,7 @@ attachment:
     - pdf 
  
 buttons: 
-  - Finish: restart 
+  - Finish: exit
+    https://huttstcentre.org.au
+  - Restart: restart
 ---

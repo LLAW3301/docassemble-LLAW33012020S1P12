@@ -47,6 +47,9 @@ metadata:
     - name: Kimberly Wong
   organization: Flinders University   
   show login: False
+  exit url: https://huttstcentre.org.au
+  exit link: exit
+  exit label: Exit this app
 ---
 objects:
   - KWlogo: DAStaticFile.using(filename='hutt-st-centre-logo.svg')
